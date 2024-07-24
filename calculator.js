@@ -22,15 +22,12 @@ function calculate() {
     case '+':
       result = parseFloat(firstOperand) + parseFloat(secondOperand);
       break;
-
     case '-':
       result = parseFloat(firstOperand) - parseFloat(secondOperand);
       break;
-
     case '*':
       result = parseFloat(firstOperand) * parseFloat(secondOperand);
       break;
-
     case '/':
       if (parseFloat(secondOperand) === 0) {
         result = 'Error'; // Handle division by zero
@@ -38,7 +35,6 @@ function calculate() {
         result = parseFloat(firstOperand) / parseFloat(secondOperand);
       }
       break;
-
     default:
       return;
   }
@@ -54,4 +50,12 @@ function clearDisplay() {
   firstOperand = '';
   secondOperand = '';
   currentOperation = '';
+}
+
+function clearLast() {
+  if (display.value !== '') {
+    display.value = display.value.slice(0, -1); // Remove the last character
+  } else {
+    currentOperation = '';
+  }
 }
